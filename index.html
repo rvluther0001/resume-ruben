@@ -49,6 +49,20 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
         }
+        
+        /* Animasi Muncul saat Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
     </style>
 </head>
 <body class="antialiased selection:bg-brand selection:text-white">
@@ -74,7 +88,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="pt-32 pb-20 md:pt-48 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
-        <div class="md:w-3/5 z-10">
+        <div class="md:w-3/5 z-10 reveal">
             <p class="text-brand font-mono mb-4 text-lg">Halo, panggil aja gw Ruben.</p>
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
                 Ruben Luther.<br>
@@ -93,7 +107,7 @@
                 </a>
             </div>
         </div>
-        <div class="md:w-2/5 mt-16 md:mt-0 flex justify-center opacity-80 pointer-events-none">
+        <div class="md:w-2/5 mt-16 md:mt-0 flex justify-center opacity-80 pointer-events-none reveal delay-200">
             <!-- Decorative Terminal Window -->
             <div class="glass-card rounded-xl w-full max-w-md overflow-hidden border border-slate-700 shadow-2xl">
                 <div class="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-slate-700">
@@ -116,10 +130,10 @@
     <!-- About Section -->
     <section id="about" class="py-20 bg-slate-800/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 flex items-center gap-3">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 flex items-center gap-3 reveal">
                 <i class="ph ph-user text-brand"></i> Tentang Gw
             </h2>
-            <div class="glass-card p-8 rounded-2xl text-slate-300 leading-relaxed text-lg">
+            <div class="glass-card p-8 rounded-2xl text-slate-300 leading-relaxed text-lg reveal delay-100">
                 <p class="mb-4">
                     Gw adalah seorang Big Data Engineer lulusan S1 Sistem Informasi dari Universitas Gunadarma (2019). Perjalanan karir gw cukup beragam—gw sempat kerja di bidang IT Security dan jadi .NET Developer sebelum akhirnya nemuin <em>passion</em> gw buat ngurusin data skala besar.
                 </p>
@@ -142,30 +156,30 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-3">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-3 reveal">
                 <i class="ph ph-code text-brand"></i> Tech Stack & Tools
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <!-- Python -->
-                <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center skill-badge transition-all cursor-default">
+                <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center skill-badge transition-all cursor-default reveal">
                     <i class="ph ph-file-py text-5xl text-yellow-400 mb-3"></i>
                     <h3 class="font-bold text-lg mb-1">Python</h3>
                     <p class="text-xs text-slate-400">Data Processing & Scripting</p>
                 </div>
                 <!-- PostgreSQL -->
-                <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center skill-badge transition-all cursor-default">
+                <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center skill-badge transition-all cursor-default reveal delay-100">
                     <i class="ph ph-database text-5xl text-blue-400 mb-3"></i>
                     <h3 class="font-bold text-lg mb-1">PostgreSQL</h3>
                     <p class="text-xs text-slate-400">RDBMS & Complex Queries</p>
                 </div>
                 <!-- Hive / Impala -->
-                <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center skill-badge transition-all cursor-default">
+                <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center skill-badge transition-all cursor-default reveal delay-200">
                     <i class="ph ph-hexagon text-5xl text-yellow-600 mb-3"></i>
                     <h3 class="font-bold text-lg mb-1">Hive / Impala</h3>
                     <p class="text-xs text-slate-400">Hadoop Ecosystem Data Warehouse</p>
                 </div>
                 <!-- Go -->
-                <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center skill-badge transition-all cursor-default">
+                <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center skill-badge transition-all cursor-default reveal delay-300">
                     <i class="ph ph-terminal-window text-5xl text-cyan-400 mb-3"></i>
                     <h3 class="font-bold text-lg mb-1">Golang</h3>
                     <p class="text-xs text-slate-400">Microservices & API Development</p>
@@ -177,13 +191,13 @@
     <!-- What I Do (Experience) Section -->
     <section id="experience" class="py-20 bg-slate-800/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-3">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-3 reveal">
                 <i class="ph ph-briefcase text-brand"></i> Apa Aja Yang Gw Kerjain?
             </h2>
             
             <div class="space-y-8">
                 <!-- Card 1 -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start">
+                <div class="glass-card p-6 md:p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start reveal">
                     <div class="bg-brand/20 p-4 rounded-xl text-brand shrink-0">
                         <i class="ph ph-bug text-3xl"></i>
                     </div>
@@ -196,7 +210,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start">
+                <div class="glass-card p-6 md:p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start reveal delay-100">
                     <div class="bg-purple-500/20 p-4 rounded-xl text-purple-400 shrink-0">
                         <i class="ph ph-git-branch text-3xl"></i>
                     </div>
@@ -209,7 +223,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start">
+                <div class="glass-card p-6 md:p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start reveal delay-200">
                     <div class="bg-green-500/20 p-4 rounded-xl text-green-400 shrink-0">
                         <i class="ph ph-plugs text-3xl"></i>
                     </div>
@@ -230,7 +244,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 
                 <!-- Work History -->
-                <div>
+                <div class="reveal">
                     <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
                         <i class="ph ph-buildings text-brand"></i> Pengalaman Kerja
                     </h2>
@@ -272,7 +286,7 @@
                 </div>
 
                 <!-- Education -->
-                <div>
+                <div class="reveal delay-200">
                     <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
                         <i class="ph ph-graduation-cap text-brand"></i> Pendidikan
                     </h2>
@@ -298,7 +312,7 @@
     </section>
 
     <!-- Footer / Contact -->
-    <footer id="contact" class="py-12 border-t border-slate-800">
+    <footer id="contact" class="py-12 border-t border-slate-800 reveal">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-2xl font-bold mb-6">Let's Connect!</h2>
             <p class="text-slate-400 mb-8 max-w-xl mx-auto">
@@ -329,6 +343,29 @@
     <script>
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Script untuk Animasi Muncul (Scroll Reveal)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Efek akan terpanggil ketika 15% dari elemen terlihat di layar
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Tambahkan class 'active' untuk trigger CSS transform & opacity
+                    entry.target.classList.add('active');
+                    // Stop observasi elemen ini agar animasi cuma terjadi sekali (nggak ngulang2 terus)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Pilih semua elemen yang memiliki class 'reveal' lalu jalankan observer
+        document.querySelectorAll('.reveal').forEach((element) => {
+            observer.observe(element);
+        });
     </script>
 </body>
 </html>
